@@ -22,7 +22,7 @@
     <style>
         .drop{position:absolute;top:10px;left:590%;}
         .add{background: green;border:2px solid green;color:white;margin-left:400%;width: 150px;}
-        .der{padding-left: 3%;}
+        .der{padding-left: 2%;}
     </style>
 </head>
 <body>
