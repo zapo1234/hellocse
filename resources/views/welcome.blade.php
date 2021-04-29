@@ -98,7 +98,7 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Lister le contenu de vos  fiches clients.
+                    Lister le contenu de vos  fiches clients..
                 </div>
 
                 <div class="link">
