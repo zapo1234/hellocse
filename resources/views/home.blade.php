@@ -2,7 +2,7 @@
 <style>
     .edit a{color:white;padding: 2%;background:green;height: 20px;border-radius:10px;width:100px;text-decoration: none;}
     .delete a{color:white;padding: 2%;background:red;height: 20px;border-radius:10px;width:100px;text-decoration: none;}
-    .cards{font-family: arial;font-size:16px;text-transform: uppercase;}
+    .cards{font-family: arial;font-size:16px;text-transform: uppercase;text-align: center;}
 </style>
 @section('content')
 <div class="container">

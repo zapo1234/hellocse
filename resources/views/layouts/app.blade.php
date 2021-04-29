@@ -21,7 +21,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet"  crossorigin="anonymous">
     <style>
         .drop{position:absolute;top:10px;left:590%;}
-        .add{background: green;border:2px solid green;color:white;margin-left:400%;width: 150px;}
+        .add{background: green;border:2px solid green;color:white;margin-left:450%;width:150px;}
         .der{padding-left: 2%;}
     </style>
 </head>

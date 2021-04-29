@@ -28,7 +28,9 @@ use Illuminate\Support\Facades\Route;
          Route::get('/star/edit/{id}', 'ProfilController@edit')->name('edit');
          Route::post('star/edit/{id}', 'ProfilController@creates')->name('creates');
          Route::get('/star/delete/{id}', 'ProfilController@delete')->name('delete');
-         Route::get('/', 'ProfilController@add')->name('logout');
+
+         // route Ajax afficher le contenu dynamique des fiches
+         Route::get('/star/data', 'AjaxController@view')->name('view');
 
        });
 
