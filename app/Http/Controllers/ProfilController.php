@@ -72,7 +72,7 @@ class ProfilController extends Controller
 
             else{
 
-                $file_name="";
+                $file_name="no";
             }
 
                 try {
