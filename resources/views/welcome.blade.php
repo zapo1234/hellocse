@@ -12,7 +12,7 @@
         <!-- Styles -->
         <style>
             html, body {
-                background-color: #fff;
+                background-color:#fff;
                 color: #636b6f;
                 font-family: 'Nunito', sans-serif;
                 font-weight: 200;
@@ -20,32 +20,31 @@
                 margin: 0;
             }
 
-            .full-height {
-                height: 100vh;
+            .top-right{
+                margin-left:60%;
+                margin-top:50px;
             }
+            .compte{padding-left:3%;}
 
             .flex-center {
-                align-items: center;
-                display: flex;
-                justify-content: center;
+
             }
 
             .position-ref {
                 position: relative;
             }
 
-            .top-right {
-                position: absolute;
-                right: 10px;
-                top: 18px;
+            .top-right
             }
 
             .content {
-                text-align: center;
             }
 
             .title {
-                font-size: 84px;
+              font-size:25px;
+                margin-left: 30%;
+                font-family: arial;
+                text-decoration: underline;
             }
 
             .links > a {
@@ -56,6 +55,24 @@
                 letter-spacing: .1rem;
                 text-decoration: none;
                 text-transform: uppercase;
+            }
+
+            .link{
+             margin-left: 10%;
+            }
+            .link,.links1{float: left;}
+            .link a{
+                display: block;
+                font-family: arial;
+                border:1px solid #eee;
+                width: 200px;
+                height: 40px;
+                color:black;
+                background: #eee;
+                text-align: center;
+                margin-top:3px;
+                text-decoration: none;
+                font-weight: bold;
             }
 
             .m-b-md {
@@ -70,10 +87,10 @@
                     @auth
                         <a href="{{ url('/home') }}">Home</a>
                     @else
-                        <a href="{{ route('login') }}">Login</a>
+                        <a href="{{ route('login') }}">Connexion</a>
 
                         @if (Route::has('register'))
-                            <a href="{{ route('register') }}">Register</a>
+                            <a href="{{ route('register') }}" class="compte">créer un compte</a>
                         @endif
                     @endauth
                 </div>
@@ -81,19 +98,20 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Laravel
+                    Lister le contenu de vos  fiches clients.
                 </div>
 
-                <div class="links">
-                    <a href="https://laravel.com/docs">Docs</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://blog.laravel.com">Blog</a>
-                    <a href="https://nova.laravel.com">Nova</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://vapor.laravel.com">Vapor</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
+                <div class="link">
+                    <a href="">Docs</a>
+                    <a href="">Laracasts</a>
+                    <a href="">News</a>
+
                 </div>
+
+                <div class="links1">
+
+              </div>
+
             </div>
         </div>
     </body>

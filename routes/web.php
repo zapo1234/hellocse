@@ -13,6 +13,27 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
+     Route::group(['middleware' => ['auth']], function () {
+        //routes autorisées au utilisateurs connectés
+        // route pour créer un profil dans les fiches
+
+         Route::get('/star/add', 'ProfilController@add')->name('add');
+         Route::post('/star/list', 'ProfilController@create')->name('create');
+         // crud sur liste des profil des fiches
+         // view sur liste
+         Route::get('/star/list', 'ProfilController@list')->name('list');
+
+         Route::post('/star/{id}', 'ProfilController@update')->name('update');
+         Route::post('/star/{id}', 'ProfilController@delete')->name('delete');
+
+       });
+
+
+        // route index page d'acceuil
+       // accès public  public des profil des fiches
+       Route::get('/', 'HomeController@index_all')->name('index_all');
+
+     Auth::routes();
+
+     Route::get('/home', 'HomeController@index')->name('home');
