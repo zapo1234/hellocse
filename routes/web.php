@@ -24,8 +24,8 @@ use Illuminate\Support\Facades\Route;
          // view sur liste
          Route::get('/star/list', 'ProfilController@list')->name('list');
 
-         Route::post('/star/{id}', 'ProfilController@update')->name('update');
-         Route::post('/star/{id}', 'ProfilController@delete')->name('delete');
+         Route::post('/star/edit/{id}', 'ProfilController@update')->name('update');
+         Route::post('/star/delete/{id}', 'ProfilController@delete')->name('delete');
 
        });
 

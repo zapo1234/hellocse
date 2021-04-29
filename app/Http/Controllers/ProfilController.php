@@ -15,6 +15,14 @@ class ProfilController extends Controller
         return view('star.add');
     }
 
+    public function list(){
+
+        // get the list of file profiles
+        // list in alphabetical order the name of the profiles for display
+        $result = Content::All()->sortBy('lastname');
+        return view('star.list', compact('result'));
+    }
+
     public function create(Request $request){
 
         $messages = [
@@ -30,7 +38,7 @@ class ProfilController extends Controller
             'lastname' => 'required|string|min:5|max:55',
             'firstanme' => 'required|string|min:3|max:255',
             'description' => 'required|string|min:5|max:300',
-            'file' => 'required|mimes:jpeg,png,jpg|max:2048',
+            'file' => 'required|mimes:jpeg,png,jpg|max:2048'
 
         ];
 
@@ -71,7 +79,6 @@ class ProfilController extends Controller
             }
 
             else{
-
                 $file_name="no";
             }
 
@@ -83,7 +90,8 @@ class ProfilController extends Controller
                     $content->file = $file_name;
                     // insert bdd in content
                     $content->save();
-                    return redirect('star.list')->with('status', "le profil à eté bien ajouté");
+                    // redirect vers la page des actions crud
+                    return redirect('star.list');
                 } catch (Exception $e) {
                     return redirect('star.add')->with('failed', "echec");
                 }
@@ -92,12 +100,18 @@ class ProfilController extends Controller
 
 
 
-    public function update(){
+    public function edit($id){
+        $data = Content::find($id);
+        return view('star/edit', compact('data'));
+
+    }
+
+    public function  delete($id){
 
 
     }
 
-    public function delete() {
+    public function delete($id) {
 
 
     }
