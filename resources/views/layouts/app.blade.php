@@ -18,7 +18,12 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet"  crossorigin="anonymous">
+    <style>
+        .drop{position:absolute;top:10px;left:590%;}
+        .add{background: green;border:2px solid green;color:white;margin-left:400%;width: 150px;}
+        .der{padding-left: 3%;}
+    </style>
 </head>
 <body>
     <div id="app">
@@ -48,16 +53,16 @@
                             @endif
                         @else
                             <li class="nav-item dropdown">
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    Bienvenu <span class="der"></span> {{ Auth::user()->name }}</a><span>
-                                </a>
+                                <span id="navbarDropdown" class="nav" href="#" role="button"  aria-haspopup="true" aria-expanded="false" v-pre>
+                                    Bienvenu <span class="der"> {{ Auth::user()->name }}</a></span>
+                                </span >
 
                                     <a href ="{{ route('add') }}">
-                                        <button> Ajouter un profil</button>
+                                        <button class="add"> Ajouter un profil</button>
                                     </a>
 
-                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="{{ route('logout') }}"
+                                <div class="top">
+                                    <a class="drop" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
                                         {{ __('Logout') }}

@@ -22,10 +22,13 @@ use Illuminate\Support\Facades\Route;
          Route::post('/star/list', 'ProfilController@create')->name('create');
          // crud sur liste des profil des fiches
          // view sur liste
+         // action crud
          Route::get('/star/list', 'ProfilController@list')->name('list');
 
          Route::get('/star/edit/{id}', 'ProfilController@edit')->name('edit');
+         Route::post('star/edit/{id}', 'ProfilController@creates')->name('creates');
          Route::get('/star/delete/{id}', 'ProfilController@delete')->name('delete');
+         Route::get('/', 'ProfilController@add')->name('logout');
 
        });
 

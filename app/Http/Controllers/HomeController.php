@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Content;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class HomeController extends Controller
 {
@@ -24,8 +25,8 @@ class HomeController extends Controller
      */
     public function index()
     {
-
-        return view('home');
+        $result = DB::table('content')->paginate(3);
+        return view('home', compact('result'));
     }
 
 

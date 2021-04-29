@@ -4,7 +4,7 @@
 
     @if (session('succes_delete'))
         <div class="alert alert-success" role="alert">
-            {{ session('status') }}
+            {{ session('succes_delete') }}
         </div>
     @elseif(session('failed'))
         <div class="alert alert-danger" role="alert">
