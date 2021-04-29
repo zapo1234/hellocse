@@ -4,33 +4,43 @@ namespace App\Http\Controllers;
 use App\Content;
 use Illuminate\Http\Request;
 use \Illuminate\Http\Response;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Validation\Rule;
 
 class ProfilController extends Controller
 {
-    //
-    public function add() {
-
-        return view('star.add');
+     public function index_all(){
+        // retrieves all the list of file profiles to display them
+        // page index de la solution.
+        $listes = Content::All();
+        return view('welcome', compact('listes'));
     }
 
-    public function list(){
+    //
+      public function add() {
 
-        // get the list of file profiles
-        // list in alphabetical order the name of the profiles for display
-        $result = Content::All()->sortBy('lastname');
+        return view('star.add');
+      }
+
+      // get the list of file profiles
+      // list in alphabetical order the name of the profiles for display
+      // insert paginate for list
+       public function list(){
+
+        $result = DB::table('content')->paginate(3);
         return view('star.list', compact('result'));
     }
 
-    public function create(Request $request){
+    // enregsitrer un user dans les fiches
+       public function create(Request $request){
 
         $messages = [
             'lastname.max' => 'Votre prénom ne peut avoir plus de :max caractères.',
             'lastname.min' => 'Votre nom ne peut avoir moins de :min caractères.',
             'firstname.required' => 'Vous devez saisir un prénom.',
             'description.min' => 'vous devez saisir au moins 5 caractères',
-            'description.max' => 'vous devez au plus 300 caractères',
+            'description.max' => 'vous devez siaisir au plus 300 caractères',
 
         ];
 
@@ -82,6 +92,8 @@ class ProfilController extends Controller
                 $file_name="no";
             }
 
+                // insert to data in db
+
                 try {
                     $content = new Content();
                     $content->lastname = $lastname;
@@ -91,7 +103,7 @@ class ProfilController extends Controller
                     // insert bdd in content
                     $content->save();
                     // redirect vers la page des actions crud
-                    return redirect('star.list');
+                    return redirect('star/list');
                 } catch (Exception $e) {
                     return redirect('star.add')->with('failed', "echec");
                 }
@@ -99,21 +111,27 @@ class ProfilController extends Controller
         }
 
 
-
+    // Modify the profile of the user file
     public function edit($id){
         $data = Content::find($id);
         return view('star/edit', compact('data'));
 
     }
 
+    // delete the profile from the user file
     public function  delete($id){
+        $content = Content::find($id);
 
+        // we delete the image in the upload folder
+        unlink(public_path('upload').'/'.$content->file);
+
+        // we delete the data in the database
+        $content->delete();
+        // on redirige sur la page
+        return redirect()->route('list')->with('succes_delete','votre profil est bien suprimé');
 
     }
 
-    public function delete($id) {
 
-
-    }
 
 }

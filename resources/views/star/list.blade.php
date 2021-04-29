@@ -1,19 +1,20 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="container">
 
-        <div id="search">
-            <form action="/search" method="get">
-                <input type="search" name="search" id="recher" class="form -control">
-                <button class="btn btn-primary" type="submit">search</button>
-            </form>
+    @if (session('succes_delete'))
+        <div class="alert alert-success" role="alert">
+            {{ session('status') }}
         </div>
+    @elseif(session('failed'))
+        <div class="alert alert-danger" role="alert">
+            {{ session('failed') }}
+        </div>
+    @endif
+
+    <div class="container">
         <div id="resultats"></div>
         <!--resultat ajax -->
-        <div class="col-md-5" align="right">
-            <a href="{{ url('/pdf') }}" class="btn btn-danger">Convert into PDF</a>
-        </div>
 
         <table class="table">
             <thead>
@@ -32,8 +33,8 @@
                     <td>{{ $resultats->lastname }}</td>
                     <td>{{ $resultats->firstname }}</td>
                     <td>{{ $resultats->description }}</td>
-                    <td><a href="star/{{$resultats->id}}">Edit</a></td>
-                    <td><a href="star/{{$resultats->id}}">delete</a></td>
+                    <td><a href="edit/{{$resultats->id}}">Edit</a></td>
+                    <td><a href="delete/{{$resultats->id}}">delete</a></td>
 
                 </tr>
             @endforeach

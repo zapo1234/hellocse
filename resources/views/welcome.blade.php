@@ -102,12 +102,12 @@
                 </div>
 
                 <div class="link">
-                    <a href="">Docs</a>
-                    <a href="">Laracasts</a>
-                    <a href="">News</a>
+
+                    @foreach($listes as $liste)
+                        <a href="" class="user" data-id="{{ $liste->id }}">{{ $liste->firstname }} {{ $liste->lastname }}</a>
+                    @endforeach
 
                 </div>
-
                 <div class="links1">
 
               </div>

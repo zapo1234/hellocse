@@ -24,15 +24,15 @@ use Illuminate\Support\Facades\Route;
          // view sur liste
          Route::get('/star/list', 'ProfilController@list')->name('list');
 
-         Route::post('/star/edit/{id}', 'ProfilController@update')->name('update');
-         Route::post('/star/delete/{id}', 'ProfilController@delete')->name('delete');
+         Route::get('/star/edit/{id}', 'ProfilController@edit')->name('edit');
+         Route::get('/star/delete/{id}', 'ProfilController@delete')->name('delete');
 
        });
 
 
         // route index page d'acceuil
        // accès public  public des profil des fiches
-       Route::get('/', 'HomeController@index_all')->name('index_all');
+       Route::get('/', 'ProfilController@index_all')->name('index_all');
 
      Auth::routes();
 

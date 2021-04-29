@@ -24,12 +24,9 @@ class HomeController extends Controller
      */
     public function index()
     {
+
         return view('home');
     }
 
-    public function index_all(){
-        // retrieves all the list of file profiles to display them
-        $listes = Content::All();
-        return view('welcome', compact('listes'));
-    }
+
 }
