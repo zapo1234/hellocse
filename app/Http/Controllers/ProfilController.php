@@ -12,8 +12,9 @@ class ProfilController extends Controller
 {
     // retrieves all the list of file profiles to display them
     // index page of the solution (public page)
+    // insert paginate for list
     public function index_all(){
-        $listes = Content::All();
+        $listes = DB::table('content')->paginate(3);
         return view('welcome', compact('listes'));
     }
 
@@ -35,30 +36,27 @@ class ProfilController extends Controller
       // Add a new profile to the files
        public function create(Request $request){
 
-        $messages = [
-            'lastname.max' => 'Votre prénom ne peut avoir plus de :max caractères.',
-            'lastname.min' => 'Votre nom ne peut avoir moins de :min caractères.',
-            'firstname.required' => 'Vous devez saisir un prénom.',
-            'description.min' => 'vous devez saisir au moins 5 caractères',
-            'description.max' => 'vous devez siaisir au plus 300 caractères',
+           $messages = [
+               'lastname.max' => 'Votre prènoms ne peut avoir plus de :max caractères.',
+               'lastname.min' => 'Votre nom ne peut avoir moins de :min caractères.',
+               'firstname.required' => 'Vous devez saisir votre prénom.',
+               'firstanme.max' => 'Votre nom ne peut avoir plus de :max caractères',
+               'description.max' => 'la description ne peut avoir plus de :max caractères',
+               'description.min' => 'la description ne peut avoir moins de :min caractères',
 
-        ];
+           ];
 
-        $rules = [
-            'lastname' => 'required|string|min:5|max:55',
-            'firstanme' => 'required|string|min:3|max:255',
-            'description' => 'required|string|min:5|max:300',
-            'file' => 'required|mimes:jpeg,png,jpg|max:2048'
-
-        ];
-
+           $rules = [
+               'lastname' => 'required|string|min:5|max:55',
+               'firstname' => 'required|string|min:3|max:55',
+               'description' => 'required|string|min:3|max:255'
+           ];
 
 
-        $validator = Validator::make($request->all(),$rules,$messages);
-        if (!$validator->fails()) {
-            return redirect('star/add')
-                ->withInput()
-                ->withErrors($validator);
+
+           $validator = Validator::make($request->all(),$rules,$messages);
+        if ($validator->fails()) {
+            return back()->withErrors($validator)->withInput();
         }
         else {
 

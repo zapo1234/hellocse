@@ -29,6 +29,7 @@ use Illuminate\Support\Facades\Route;
          Route::post('star/edit/{id}', 'ProfilController@creates')->name('creates');
          Route::get('/star/delete/{id}', 'ProfilController@delete')->name('delete');
 
+         Route::get('/home', 'HomeController@index')->name('home');
 
 
        });
@@ -46,4 +47,4 @@ use Illuminate\Support\Facades\Route;
         // acces login et register users
        Auth::routes();
 
-       Route::get('/home', 'HomeController@index')->name('home');
+
