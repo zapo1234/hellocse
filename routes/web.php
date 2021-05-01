@@ -38,7 +38,7 @@ use Illuminate\Support\Facades\Route;
         // accès public  public des profil des fiches, page d'acceuil
         Route::get('/index', 'AjaxController@index_all')->name('index_all');
         // route Ajax afficher le contenu dynamique des fiches sur la page d'acceuil
-        Route::get('', 'AjaxController@data_call')->name('data');
+        Route::get('/star', 'AjaxController@data_call')->name('data');
 
         // route retour des datas ajax
          Route::get('/star/data', 'AjaxController@datas')->name('datas');

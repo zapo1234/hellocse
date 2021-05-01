@@ -62,16 +62,16 @@ class ProfilController extends Controller
         }
         else {
 
-            // récupération des données via les input
+            // retrieve data via the inputs
             $data = $request->input();
             $lastname = trim($data['lastname']);
-            $lastname = strip_tags($lastname);
+            $lastname = stripslashes(strip_tags($lastname));
+
             $firstname = trim($data['firstname']);
             $firstname = stripslashes(strip_tags($firstname));
 
             $description = trim($data['description']);
-            $description = strip_tags($description);
-            $description = stripslashes($description);
+            $description = stripslashes(strip_tags($description));
 
             // retrieve the name of the file and path of the file picture upload
             // upload image
@@ -86,10 +86,6 @@ class ProfilController extends Controller
                 $file->move(public_path('upload'), $filename);
 
                 $file_name = $filename;
-            }
-
-            else{
-                $file_name="no";
             }
 
                 // insert to data in db
