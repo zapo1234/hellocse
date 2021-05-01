@@ -20,10 +20,10 @@
                         <a href="{{ route('add') }}">Ajouter un profil</a>
                         <a href="{{ route('home') }}">lister la fiche</a>
                     @else
-                        <a href="{{ route('login') }}">Connexion</a>
+                        <a  class ="nav" href="{{ route('login') }}">Connexion</a>
 
                         @if (Route::has('register'))
-                            <a href="{{ route('register') }}" class="compte">créer un compte</a>
+                            <a class="nav" href="{{ route('register') }}" class="compte">créer un compte</a>
                         @endif
                     @endauth
                 </div>
@@ -31,21 +31,21 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Lister le contenu de vos  fiches clients..
+                    Lister le contenu de vos  fiches clients.
                 </div>
 
                 <div class="link">
 
                     @foreach($listes as $liste)
                         <!-- affichage sur ordinateur ou tablette utilisation de la class user-->
-                        <div><a href="#" class="user" data-id="{{ $liste->id }}">{{ $liste->firstname }} {{ $liste->lastname }}</a></div>
+                        <div class="list"><a href="#" class="user" data-id="{{ $liste->id }}">{{ $liste->firstname }} {{ $liste->lastname }}</a></div>
 
                         <!--affichage sur mobile utilisation de la class user et d'une class unique pour le contenu sur mobile-->
-                            <div class="data1"><div class="users{{ $liste->id }}"><a href="#" class="users" data-id1="{{ $liste->id }}">{{ $liste->firstname }} {{ $liste->lastname }}</a></div>
-                            <div id="users{{ $liste->id }}"></div></div>
+                            <div class="data1"><a href="#" class="users" data-id1="{{ $liste->id }}">{{ $liste->firstname }} {{ $liste->lastname }}</a></div>
+                            <div id="users{{ $liste->id }}" class="data1"></div>
                             <!--affichage sur mobile utilisation de la class user et d'une class unique pour le contenu sur mobile-->
                             <!--faire disparaite et afficher dynamiquement sur la partie mobile-->
-                            <div class="data2"><div class="lists{{ $liste->id }}"><a href="#" class="lists" data-id2="{{ $liste->id }}">{{ $liste->firstname }} {{ $liste->lastname }}</a></div>
+                            <div class="data2"><div class="lists"><a href="#" class="lists" data-id2="{{ $liste->id }}">{{ $liste->firstname }} {{ $liste->lastname }}</a></div>
                             <div id="lists{{ $liste->id }}" ></div></div>
 
 
@@ -94,7 +94,7 @@
                         type: "GET",
                         data:{id:id},
                         success:function(data) { // on traite le fichier recherche après le retour
-                            $('.users'+id).html(data); // on cache la div en cours ouverte.
+                            $('#users'+id).html(data); // on cache la div en cours ouverte.
                            // $('.lists'+id).css('display','block');// on affiche la div replacante avec le meme contenu
                            // $('#lists'+id).html(data);
 
