@@ -9,12 +9,12 @@
 - Recupérer les differentes migrations exixtantes dans le dossier migration et taper php artisan migrate
 - Créer les deux table users et content.
 
--2 tables users et content pour projet
+- 2 tables users et content pour projet
 
-- Ouverture du projet page d'acceuil
+ - Ouverture du projet page d'acceuil
 
-*taper php artisan serve enuiste
-- Page public  
+ -taper php artisan serve enuiste
+ - Page public  
 - http://127.0.0.1:8000/index racine de l'application 
 
 - Auhtentification pour avoir accès au crud (créer,modifier , delete)
@@ -24,5 +24,5 @@
 - login connexion http://127.0.0.1:8000/login 
 - Créer un accès au back office pour avoir la permission à l'action crud
 
-*Une fois user connecté créer un ou plusieurs  profil pour les fiches  voir bouton en vert  
+- Une fois user connecté créer un ou plusieurs  profil pour les fiches  voir bouton en vert  
 http://127.0.0.1:8000/star/add
