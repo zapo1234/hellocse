@@ -35,7 +35,8 @@
 
             <div class="form-group">
                 <label for="formGroupExampleInput2">File(picture)</label>
-                <input type="file" class="form-control"  name="file" placeholder="" required><br/>
+                <span class="name">Name picture :{{ $data['file'] }}</span>
+                <input type="file" class="form-control"  name="file" placeholder=""><br/>
 
                 @if($errors->has('file'))
                     <div class="error">{{$errors->first('file') }}</div>

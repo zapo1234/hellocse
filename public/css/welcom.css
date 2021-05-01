@@ -1,3 +1,39 @@
+
+/*
+ X-Small devices (portrait phones, less than 576px)
+ */
+@media (max-width: 575.98px) {
+
+    html, body {
+        background-color:#fff;
+        color: #636b6f;
+        font-family: 'Nunito', sans-serif;
+        font-weight: 200;
+        height: 100vh;
+        margin: 0;
+    }
+
+    .title {
+        font-size:15px;
+        margin-left: 20%;
+        font-family: arial;
+        text-decoration: underline;
+    }
+     .date1{display: none;}
+    .data2{display:none;}
+    #content{display:none;}
+    .link,.links1{display: block;}
+    #content{display:none;}
+    .link{display: none;}
+}
+
+/*
+Affichage sur le mobile
+*/
+
+/*
+Affichage sur ordinateur et tablette
+ */
 html, body {
     background-color:#fff;
     color: #636b6f;
@@ -24,7 +60,8 @@ html, body {
 .top-right{
 }
 
-.content {
+#content {
+    width: 100%;
 }
 
 .title {
@@ -47,8 +84,10 @@ html, body {
 .link{
     margin-left: 15%;
 }
+
+ .links1{ width:50%;}
 .link,.links1{float: left;}
-.links1{margin-left: 20%;}
+.links1{margin-left:10%;border:1px solid #eee;}
 .link a{
     display: block;
     font-family: arial;
@@ -62,8 +101,10 @@ html, body {
     text-decoration: none;
     font-weight: bold;
 }
- #users, .users{display:none;}
+ #users, .data1,.lists,.data2{display:none;}
 
 .m-b-md {
     margin-bottom: 30px;
 }
+
+.name{font-family:arial;position: absolute;font-weight:bold;top:90px;padding-left: 2%;}

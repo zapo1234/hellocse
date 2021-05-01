@@ -103,7 +103,7 @@ class ProfilController extends Controller
                     // insert bdd in content
                     $content->save();
                     // redirect vers la page des actions crud
-                    return redirect('star/list');
+                    return redirect('home');
                 } catch (Exception $e) {
                     return redirect('star.add')->with('failed', "echec");
                 }
@@ -151,9 +151,17 @@ class ProfilController extends Controller
             // récupération des données via les input
             // retrieve the name of the file and path of the file picture upload
             // upload image
+            // retrieve the data of the current profile
+            $content = Content::find($id);
+
             if ($request->hasfile('file')) {
 
                 $file = $request->file('file');
+
+                if($content->file =!$file){
+                    // we delete the image in the upload folder
+                    unlink(public_path('upload').'/'.$content->file);
+                }
 
                 $extension = $file->getClientOriginalExtension();
 
@@ -162,20 +170,16 @@ class ProfilController extends Controller
                 $file->move(public_path('upload'), $filename);
 
                 $file_name = $filename;
-            }
+              }
 
             else{
-                $file_name="no";
+                $file_name= $content->file;
             }
 
             // insert to data in db
             // retrieve the data of the current profile
-              $content = Content::findOrFail($id);
-              // delete picture existant
-              if($content->file){
-                // we delete the image in the upload folder
-                unlink(public_path('upload').'/'.$content->file);
-            }
+              $content = Content::find($id);
+
                 // update of the profile modification
                 $content->lastname = $request->input('lastname');
                 $content->firstname = $request->input('firstname');
@@ -184,7 +188,7 @@ class ProfilController extends Controller
                 // insert bdd in content
                 $content->save();
                 // redirect vers la page des actions crud
-                return redirect('star/list');
+                return redirect('home');
 
         }
     }

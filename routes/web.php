@@ -16,7 +16,7 @@ use Illuminate\Support\Facades\Route;
 
      Route::group(['middleware' => ['auth']], function () {
         //routes autorisées au utilisateurs connectés
-        // route pour créer un profil dans les fiches
+        // route pour créer,modifier et supprimer  un profil dans les fiches
 
          Route::get('/star/add', 'ProfilController@add')->name('add');
          Route::post('/star/list', 'ProfilController@create')->name('create');
@@ -29,16 +29,21 @@ use Illuminate\Support\Facades\Route;
          Route::post('star/edit/{id}', 'ProfilController@creates')->name('creates');
          Route::get('/star/delete/{id}', 'ProfilController@delete')->name('delete');
 
-         // route Ajax afficher le contenu dynamique des fiches
-         Route::get('/star/data', 'AjaxController@view')->name('view');
+
 
        });
 
 
         // route index page d'acceuil
-       // accès public  public des profil des fiches
-       Route::get('/', 'ProfilController@index_all')->name('index_all');
+        // accès public  public des profil des fiches, page d'acceuil
+        Route::get('/index', 'AjaxController@index_all')->name('index_all');
+        // route Ajax afficher le contenu dynamique des fiches sur la page d'acceuil
+        Route::get('', 'AjaxController@data_call')->name('data');
 
-     Auth::routes();
+        // route retour des datas ajax
+         Route::get('/star/data', 'AjaxController@datas')->name('datas');
 
-     Route::get('/home', 'HomeController@index')->name('home');
+        // acces login et register users
+       Auth::routes();
+
+       Route::get('/home', 'HomeController@index')->name('home');
