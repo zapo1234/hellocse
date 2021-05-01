@@ -4,6 +4,7 @@
 - cloner le projet avec git clone git@github.com:zapo1234/hellocse.git
 
 - Utilisation du Back Lavarel 7 et Php 7.3
+- Utilisation du front Javascript/jquery Html/css et Ajax 
 
 - Créer une base de données mysql dans le fichier .env test_hellocse
 - créer via phpmyadmin dans mysql votre base de données et pousser les migrations existante => php artisan migrate
