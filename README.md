@@ -10,14 +10,11 @@
 - Créer les deux table users et content.
 
 - 2 tables users et content pour projet
-
- - Ouverture du projet page d'acceuil
-
- - taper php artisan serve ensuite
+  - taper php artisan serve ensuite
  - Page public  
 - http://127.0.0.1:8000/index racine de l'application 
 
-- Auhtentification pour avoir accès au crud (créer,modifier , delete)
+ - Auhtentification pour avoir accès au crud (créer,modifier , delete)
 
 - Register  http://127.0.0.1:8000/register 
 - créer un accès avec email et mot de passe 
