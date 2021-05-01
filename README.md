@@ -24,3 +24,8 @@
 
 - Une fois user connecté créer un ou plusieurs  profil pour les fiches  voir bouton en vert  
 http://127.0.0.1:8000/star/add
+
+- Respecter les validations sur les entrées Lastname( 1 contenu) et 
+- firstanme(1 contenu) pour donner forme à l'image du text(exemple Alexis Nominé ou Justine Tavares donc en 2 contenu de moins de 25)
+- Valider le formulaire en respectant la validation sur les input.
+- Possibilité de mettre une relation ManyToOne entre users et la table content des profil de fiche
