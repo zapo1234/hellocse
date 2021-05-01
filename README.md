@@ -13,7 +13,7 @@
 
  - Ouverture du projet page d'acceuil
 
- -taper php artisan serve enuiste
+ - taper php artisan serve ensuite
  - Page public  
 - http://127.0.0.1:8000/index racine de l'application 
 
