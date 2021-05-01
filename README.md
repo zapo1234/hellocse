@@ -3,18 +3,19 @@
 - Projet à récupérer sur la branch devTest
 - cloner le projet avec git clone git@github.com:zapo1234/hellocse.git
 
+- Utilisation de wampserver sur windows ou xamp linux (localhost sur port 80).
 - Utilisation du Back Lavarel 7 et Php 7.3
 - Utilisation du front Javascript/jquery Html/css et Ajax 
 
-- Créer une base de données mysql dans le fichier .env test_hellocse
-- créer via phpmyadmin dans mysql votre base de données et pousser les migrations existante => php artisan migrate
+- Créer une base de données mysql dans le fichier .env  test_hellocse
+- créer via phpmyadmin dans mysql votre base de données avec le meme nom  et pousser les migrations existante => php artisan migrate
 - Recupérer les differentes migrations exixtantes dans le dossier migration et taper php artisan migrate
-- Créer les deux table users et content.
+- Créer les deux table users et content en poussant la commande cli php artisan migrate.
 
 - 2 tables users et content pour projet
   - taper php artisan serve ensuite
  - Page public  
-- http://127.0.0.1:8000/index racine de l'application 
+- http://127.0.0.1:8000/index racine de l'application page public responsive
 
  - Auhtentification pour avoir accès au crud (créer,modifier , delete)
 
