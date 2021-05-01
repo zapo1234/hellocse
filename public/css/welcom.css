@@ -19,12 +19,16 @@
         font-family: arial;
         text-decoration: underline;
     }
-     .date1{display: none;}
+
+    .user{display: none;}
     .data2{display:none;}
     #content{display:none;}
-    .link,.links1{display: block;}
     #content{display:none;}
-    .link{display: none;}
+    .title{display: none;}
+
+    .links a{
+        display: none;
+    }
 }
 
 /*
