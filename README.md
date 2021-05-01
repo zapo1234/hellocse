@@ -27,6 +27,14 @@
 
 - Une fois user connecté créer un ou plusieurs  profil pour les fiches  voir bouton en vert  , edit ou suprimer.
 
+- Différent dossiers
+- web voir les definitions des route get et post utilisés pour le projet
+- App/Http/controller les controllers utilisés.
+- ressources/views pour les fichiers blade de la vue
+- public (css/js/upload).
+-  migrations pour les tables
+-  .env pour la base de données mysql
+
 - Respecter les validations sur les entrées Lastname( 1 contenu) et 
 - firstanme(1 contenu) pour donner forme à l'image du text(exemple Alexis Nominé ou Justine Tavares donc en 2 contenu de moins de 25)
 - Valider le formulaire en respectant la validation sur les input.
