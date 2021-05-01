@@ -21,6 +21,7 @@
 - Register  http://127.0.0.1:8000/register 
 - créer un accès avec email et mot de passe 
 - login connexion http://127.0.0.1:8000/login 
+- Utiliser les accès  Email souame@yahoo.fr Mot de passe zapo1234 sur l'hébergement github pour vous connecter ou créer vos identifiants si vous souhaiter.
 - Créer un accès au back office pour avoir la permission à l'action crud
 
 - Une fois user connecté créer un ou plusieurs  profil pour les fiches  voir bouton en vert  , edit ou suprimer.
