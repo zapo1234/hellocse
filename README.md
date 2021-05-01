@@ -5,7 +5,8 @@
 
 - Utilisation du Back Lavarel 7 et Php 7.3
 
-- Créer une base de données dans le fichier .env test_hellocse
+- Créer une base de données mysql dans le fichier .env test_hellocse
+- créer via phpmyadmin dans mysql votre base de données et pousser les migrations existante => php artisan migrate
 - Recupérer les differentes migrations exixtantes dans le dossier migration et taper php artisan migrate
 - Créer les deux table users et content.
 
