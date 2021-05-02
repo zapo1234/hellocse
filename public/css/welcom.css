@@ -18,16 +18,15 @@
     .link a {
         display: block;
         font-family: arial;
-        width: 250px;
-        height: 40px;
+        width: 300px;
         color: black;
         background: #eee;
         text-align: center;
-        border-bottom:2px solid #9999;
+        border-bottom:1px solid #9999;
         text-decoration: none;
         font-weight: 400;
         margin-left: 15%;
-        padding-top:10px;
+        padding:3%;
     }
 
     .title {
@@ -46,6 +45,15 @@
     .nav {
         display: none;
     }
+    .name {
+        font-family: arial;
+        position: absolute;
+        font-weight: bold;
+        top: 90px;
+        padding-left: 2%;
+        text-transform: capitalize;
+    }
+    .result{padding:2%;}
 }
 
 /*
@@ -104,7 +112,7 @@ Affichage sur ordinateur et tablette
     }
 
     .link {
-        margin-left: 15%;
+        margin-left:15%;
     }
 
     .links1 {
@@ -123,15 +131,15 @@ Affichage sur ordinateur et tablette
     .link a {
         display: block;
         font-family: arial;
-        width: 200px;
-        height: 40px;
+        width: 300px;
         color: black;
         background: #eee;
         text-align: center;
-        border-bottom:2px solid #9999;
+        border-bottom:1px solid #9999;
         text-decoration: none;
         font-weight: bold;
         font-size:13px;
+        padding:3%;
     }
 
     #users, .data1, .lists, .data2 {
@@ -148,6 +156,7 @@ Affichage sur ordinateur et tablette
         font-weight: bold;
         top: 90px;
         padding-left: 2%;
+        text-transform: capitalize;
     }
 
 }

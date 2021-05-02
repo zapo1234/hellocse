@@ -15,14 +15,11 @@ use Illuminate\Support\Facades\Route;
 
 
      Route::group(['middleware' => ['auth']], function () {
-        //routes autorisées au utilisateurs connectés
-        // route pour créer,modifier et supprimer  un profil dans les fiches
+        //routes autorisées uniquement qu'aux utilisateurs connectés
 
+         // route crud (view, create, edit, delete)
          Route::get('/star/add', 'ProfilController@add')->name('add');
          Route::post('/star/list', 'ProfilController@create')->name('create');
-         // crud sur liste des profil des fiches
-         // view sur liste
-         // action crud
          Route::get('/star/list', 'ProfilController@list')->name('list');
 
          Route::get('/star/edit/{id}', 'ProfilController@edit')->name('edit');

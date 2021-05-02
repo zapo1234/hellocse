@@ -36,4 +36,15 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    /**
+     *
+     * relation ManyToOne User with content
+     */
+
+    public function contents(){
+
+        return $this->hasMany(Content::class);
+    }
+
 }

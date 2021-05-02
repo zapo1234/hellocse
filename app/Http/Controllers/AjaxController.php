@@ -31,11 +31,11 @@ class AjaxController extends Controller
         // retrieve the data in the database corresponding to the id
         // get an array collection
         $content = Content::find($id);
-        $data = $content['firstanme'];
-        $data1= $content['lastname'];
-        $data2 = $content['description'];
+        $data1 = $content['firstname'];
+        $data2= $content['lastname'];
+        $data3 = $content['description'];
         $img = $content->file;
-        $result='<div><img src="upload/'.$img.'" width="120" height="80"><span class="name">'.$data.' '.$data1.'</span><br/>'.$data2.'</div>';
+        $result='<div class="result"><img src="upload/'.$img.'" width="120" height="80"><span class="name">'.$data1.' '.$data2.'</span><br/>'.$data3.'</div>';
 
         return $result;
     }
