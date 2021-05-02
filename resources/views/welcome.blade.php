@@ -43,12 +43,12 @@
 
                         <!--affichage sur mobile utilisation de la class users et d'une class unique pour le contenu sur mobile-->
                             <!-- un display none sur ces class tablette ,oridnateur dans le css -->
-                            <div class="data1"><a href="#" class="users" data-id1="{{ $liste->id }}">{{ $liste->firstname }} {{ $liste->lastname }}</a></div>
-                            <div id="users{{ $liste->id }}" class="data1"></div>
-                            <!--affichage sur mobile utilisation de la class user et d'une class unique pour le contenu sur mobile-->
-                            <!--faire disparaite et afficher dynamiquement sur la partie mobile-->
-                            <div class="data2"><div class="lists"><a href="#" class="lists" data-id2="{{ $liste->id }}">{{ $liste->firstname }} {{ $liste->lastname }}</a></div>
-                            <div id="lists{{ $liste->id }}" ></div></div>
+                            <div class="data1"><a href="#"  class="users" data-id1="{{ $liste->id }}">{{ $liste->firstname }} {{ $liste->lastname }}</a></div>
+                           
+                            <div id="list{{ $liste->id }}" class="listas" css="display:none"></div>
+                            <!--affichage sur mobile utilisation de la class list  et d'une class unique pour le contenu sur mobile-->
+                            
+                            
 
 
                     @endforeach
@@ -87,27 +87,32 @@
 
                 });
 
-                // affichage sur mobile afficher/cacher pour ergonomie click sur l'element
+                // affichage sur mobile,smarphone afficher/cacher pour ergonomie click sur l'element
+                // cacher/afficher les élements par click pour plus d'ergonomie
                 $(document).on('click', '.users', function(){
 
                     var id = $(this).data('id1'); // on récupere l'id courant au click du profil d'une fiche
+                    var text = $('#list'+id).text();
+
+                    if(text !=""){    // si la div ne contient aucun caractère
+                    $('#list'+id).html('');// on vide la div au cas ou elle posséde deja les élements 
+                      }
+                    else{
                     $.ajax({
                         url: "{{route('data')}}",  // on traite par la fichier
                         type: "GET",
                         data:{id:id},
-                        success:function(data) { // on traite le fichier recherche après le retour
-                            $('#users'+id).html(data); // on affiche le contenu dans sa div unique.
-                           // $('.lists'+id).css('display','block');// on affiche la div replacante avec le meme contenu
-                           // $('#lists'+id).html(data);
-
-                        },
+                        success:function(data) { // on traite le fichier recherche après le retou
+                           $('#list'+id).html(data);// afficher le contenu dans la div 
+                            
+                         },
                         error: function(){
                             alert('La requête n\'a pas abouti'); }
                     });
-
+                  }
                 });
 
-            });
+   });
         </script>
     </body>
 </html>

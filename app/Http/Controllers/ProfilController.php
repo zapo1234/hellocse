@@ -134,7 +134,7 @@ class ProfilController extends Controller
              'lastname' => 'required|string|min:5|max:55|regex:/[A-Za-zéèçiàù]{4,25}/',
              'firstname' => 'required|string|min:5|max:25|regex:/[A-Za-zéèçiàù]{4,25}/',
              'description' => 'required|string|min:3|max:255',
-             'file' => 'required|max:10000|mimes:jpg,png,PNG',
+             'file' => 'max:10000|mimes:jpg,png,PNG',
          ];
 
 

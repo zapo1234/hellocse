@@ -38,7 +38,8 @@ class AjaxController extends Controller
         // result request
         // class mobile display none for  deskop tablette et oridnateur
         // class mobile css display block  deskop mobile,smarphone
-        $result='<div class="result"><span id="name'.$id.'" class="mobile">'.$data1.' '.$data2.'</span><br/><img src="upload/'.$img.'" width="120" height="80"><span class="name">'.$data1.' '.$data2.'</span>'.$data3.'</div>';
+        $result='<div class="result"><span id="name'.$id.'" class="mobile">'.$data1.' '.$data2.'</span><br/><img src="upload/'.$img.'" width="120" height="80">
+        <span class="name">'.$data1.' '.$data2.'</span>'.$data3.'</div>';
 
         return $result;
     }
