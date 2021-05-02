@@ -36,7 +36,7 @@
 -  .env pour la base de données mysql
 
 - Respecter les validations sur les entrées Lastname( 1 contenu) et 
-- firstanme(1 contenu) pour donner forme à l'image du text(exemple Alexis Nominé ou Justine Tavares donc en 2 contenu de moins de 25)
+- firstname(1 contenu) pour donner forme à l'image du text(exemple Alexis Nominé ou Justine Tavares donc en 2 contenu de moins de 25)
 - Valider le formulaire en respectant la validation sur les input.
 
 Amélioration poussé en cas de projet prod
