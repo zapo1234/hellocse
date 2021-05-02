@@ -38,9 +38,11 @@
 
                     @foreach($listes as $liste)
                         <!-- affichage sur ordinateur ou tablette utilisation de la class user-->
-                        <div class="list"><a href="#" class="user" data-id="{{ $liste->id }}">{{ $liste->firstname }} {{ $liste->lastname }}</a></div>
+                            <!-- un display none sur  mobile user dans le css-->
+                            <div class="list"><a href="#" class="user" data-id="{{ $liste->id }}">{{ $liste->firstname }} {{ $liste->lastname }}</a></div>
 
-                        <!--affichage sur mobile utilisation de la class user et d'une class unique pour le contenu sur mobile-->
+                        <!--affichage sur mobile utilisation de la class users et d'une class unique pour le contenu sur mobile-->
+                            <!-- un display none sur ces class tablette ,oridnateur dans le css -->
                             <div class="data1"><a href="#" class="users" data-id1="{{ $liste->id }}">{{ $liste->firstname }} {{ $liste->lastname }}</a></div>
                             <div id="users{{ $liste->id }}" class="data1"></div>
                             <!--affichage sur mobile utilisation de la class user et d'une class unique pour le contenu sur mobile-->
@@ -66,7 +68,7 @@
         <script>
             $(document).ready(function () {
 
-                // ajax request for the case of the computer or the tablet
+                // ajax request for the case of the computer or the tablette
                 // display data in the content div
                 $(document).on('click', '.user', function(){
 
@@ -94,7 +96,7 @@
                         type: "GET",
                         data:{id:id},
                         success:function(data) { // on traite le fichier recherche après le retour
-                            $('#users'+id).html(data); // on cache la div en cours ouverte.
+                            $('#users'+id).html(data); // on affiche le contenu dans sa div unique.
                            // $('.lists'+id).css('display','block');// on affiche la div replacante avec le meme contenu
                            // $('#lists'+id).html(data);
 

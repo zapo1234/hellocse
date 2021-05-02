@@ -34,8 +34,11 @@ class AjaxController extends Controller
         $data1 = $content['firstname'];
         $data2= $content['lastname'];
         $data3 = $content['description'];
-        $img = $content->file;
-        $result='<div class="result"><img src="upload/'.$img.'" width="120" height="80"><span class="name">'.$data1.' '.$data2.'</span><br/>'.$data3.'</div>';
+        $img = $content['file'];
+        // result request
+        // class mobile display none for  deskop tablette et oridnateur
+        // class mobile css display block  deskop mobile,smarphone
+        $result='<div class="result"><span id="name'.$id.'" class="mobile">'.$data1.' '.$data2.'</span><br/><img src="upload/'.$img.'" width="120" height="80"><span class="name">'.$data1.' '.$data2.'</span>'.$data3.'</div>';
 
         return $result;
     }

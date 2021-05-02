@@ -1,8 +1,8 @@
 
 /*
- X-Small devices (portrait phones, less than 576px)
+ X-Small devices (portrait phones,mobile  less than 576px)
  */
-@media (max-width: 675.98px) {
+@media (max-width: 598.98px) {
 
     html, body {
         background-color:#fff;
@@ -45,22 +45,82 @@
     .nav {
         display: none;
     }
-    .name {
+    .mobile {
         font-family: arial;
-        position: absolute;
         font-weight: bold;
         top: 90px;
         padding-left: 2%;
         text-transform: capitalize;
     }
     .result{padding:2%;}
+
+    .name{display:none}
 }
 
 /*
-Affichage sur ordinateur et tablette
+ Small devices (landscape phones, less than 990px)
+
+ */
+@media (max-width: 990.98px) { 
+
+    html, body {
+        background-color:#fff;
+        color: #636b6f;
+        font-family: 'Nunito', sans-serif;
+        font-weight: 200;
+        height: 100vh;
+        margin: 0;
+    }
+
+    .link {margin-top:30px;}
+
+    .link a {
+        display: block;
+        font-family: arial;
+        width: 300px;
+        color: black;
+        background: #eee;
+        text-align: center;
+        border-bottom:1px solid #9999;
+        text-decoration: none;
+        font-weight: 400;
+        margin-left: 15%;
+        padding:3%;
+    }
+
+    .title {
+        font-size:15px;
+        margin-left: 20%;
+        font-family: arial;
+        text-decoration: underline;
+    }
+
+    .list{display: none;}
+    .data1{display: block;}
+    .data2{display:none;}
+    #content{display:none;}
+    .title{display: none;}
+
+    .nav {
+        display: none;
+    }
+    .mobile {
+        font-family: arial;
+        font-weight: bold;
+        top: 90px;
+        padding-left: 2%;
+        text-transform: capitalize;
+    }
+    .result{padding:2%;}
+
+    .name{display:none}
+}
+
+/*
+ * Large devices (desktops, 992px and up)
  */
 
-@media (min-width: 792px) {
+@media (min-width: 992px) {
     html, body {
         background-color: #fff;
         color: #636b6f;
@@ -154,9 +214,11 @@ Affichage sur ordinateur et tablette
         font-family: arial;
         position: absolute;
         font-weight: bold;
-        top: 90px;
+        top: 120px;
         padding-left: 2%;
         text-transform: capitalize;
     }
+
+    .mobile{display: none;}
 
 }
