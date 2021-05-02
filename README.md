@@ -31,7 +31,7 @@
 - web voir les definitions des route get et post utilisés pour le projet
 - App/Http/controller les controllers utilisés.
 - ressources/views pour les fichiers blade de la vue
-- public (css/js/upload).
+- public (css/js/upload). un fichier welcom.css pour les média query vu sur mobile , tablette et ordinateur
 -  migrations pour les tables
 -  .env pour la base de données mysql
 
