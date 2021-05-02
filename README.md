@@ -3,7 +3,7 @@
 - Projet à récupérer sur la branch devTest
 - cloner le projet avec git clone git@github.com:zapo1234/hellocse.git
 
-- Utilisation de wampserver sur windows ou xamp linux (localhost sur port 80).
+- Serveur web utilisés wampserver port 80 , url localhost, base de données sur phpmyadmin (accès root , mot de passe vide) voir fichier .env
 - Utilisation du Back Lavarel 7 et Php 7.3
 - Utilisation du front Javascript/jquery Html/css et Ajax 
 
