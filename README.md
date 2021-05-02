@@ -9,7 +9,7 @@
 
 - Créer une base de données mysql dans le fichier .env  test_hellocse
 - créer via phpmyadmin dans mysql votre base de données avec le meme nom  et pousser les migrations existante => php artisan migrate
-- Recupérer les differentes migrations exixtantes dans le dossier migration et taper php artisan migrate
+- Recupérer les differentes migrations exixtantes dans le dossier migrations et taper php artisan migrate
 - Créer les deux table users et content en poussant la commande cli php artisan migrate.
 
 - 2 tables users et content pour projet
@@ -32,6 +32,7 @@
 - App/Http/controller les controllers utilisés.
 - ressources/views pour les fichiers blade de la vue
 - public (css/js/upload). un fichier welcom.css pour les média query vu sur mobile , tablette et ordinateur
+- Utilisation de l'outils de développement du navigateur chrome pour visualiser la partie css responsive sur le mobible et sur les autres dimensions d'ecran
 -  migrations pour les tables
 -  .env pour la base de données mysql
 
