@@ -68,7 +68,7 @@
         <script>
             $(document).ready(function () {
 
-                // ajax request for the case of the computer or the tablette
+                // requete ajax pour afficher les données sur un deskop oridnateur ou tablette
                 // display data in the content div
                 $(document).on('click', '.user', function(){
 
@@ -87,16 +87,17 @@
 
                 });
 
-                // affichage sur mobile,smarphone afficher/cacher pour ergonomie click sur l'element
+                //  requete ajax affichage sur mobile,smarphone afficher/cacher pour ergonomie click sur l'element
                 // cacher/afficher les élements par click pour plus d'ergonomie
                 $(document).on('click', '.users', function(){
 
                     var id = $(this).data('id1'); // on récupere l'id courant au click du profil d'une fiche
-                    var text = $('#list'+id).text();
+                    var text = $('#list'+id).text(); // on recupére le contenu de la div this courante.
 
-                    if(text !=""){    // si la div ne contient aucun caractère
+                    if(text !=""){    // si la div ne contient deja des élements
                     $('#list'+id).html('');// on vide la div au cas ou elle posséde deja les élements 
-                      }
+                    }
+                    
                     else{
                     $.ajax({
                         url: "{{route('data')}}",  // on traite par la fichier
