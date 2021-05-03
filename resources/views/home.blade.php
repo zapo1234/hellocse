@@ -12,13 +12,8 @@
                 <div class="cards">{{ __('Dashboard') }} liste de tous les profils présent dans les fiches</div>
 
                 <div class="card-body">
-                    @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
-                    @endif
-
-                        @if (session('succes_delete'))
+                   
+                            @if (session('succes_delete'))
                             <div class="alert alert-success" role="alert">
                                 {{ session('sucess_delete') }}
                             </div>

@@ -12,7 +12,7 @@ class ProfilController extends Controller
 {
     // retrieves all the list of file profiles to display them
     // index page of the solution (public page)
-    // insert paginate for list
+    // pagination sur la liste à partir de 3 resultats
     public function index_all(){
         $listes = DB::table('content')->paginate(3);
         return view('welcome', compact('listes'));
@@ -49,7 +49,7 @@ class ProfilController extends Controller
            ];
 
            $rules = [
-                'lastname' => 'required|string|min:5|max:25|regex:/[A-Za-zéèçiàù]{4,25}/',
+                'lastname' => 'required|string|min:3|max:25|regex:/[A-Za-zéèçiàù]{4,25}/',
                 'firstname' => 'required|string|min:3|max:25|regex:/[A-Za-zéèçiàù]{4,25}/',
                 'description' => 'required|string|min:3|max:255',
                  'file' => 'required|max:10000|mimes:jpg,png,PNG,JPG',
@@ -131,8 +131,8 @@ class ProfilController extends Controller
          ];
 
          $rules = [
-             'lastname' => 'required|string|min:5|max:55|regex:/[A-Za-zéèçiàù]{4,25}/',
-             'firstname' => 'required|string|min:5|max:25|regex:/[A-Za-zéèçiàù]{4,25}/',
+             'lastname' => 'required|string|min:3|max:55|regex:/[A-Za-zéèçiàù]{4,25}/',
+             'firstname' => 'required|string|min:3|max:25|regex:/[A-Za-zéèçiàù]{4,25}/',
              'description' => 'required|string|min:3|max:255',
              'file' => 'max:10000|mimes:jpg,png,PNG',
          ];
@@ -202,7 +202,7 @@ class ProfilController extends Controller
         // we delete the data in the database
         $content->delete();
         // on redirige sur la page
-        return redirect()->route('list')->with('succes_delete','votre profil est bien suprimé');
+        return redirect()->route('home')->with('succes_delete','le profil est bien suprimé');
 
     }
 
