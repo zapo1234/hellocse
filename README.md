@@ -28,7 +28,7 @@
 
 - Différent dossiers
 - le fichier web.php explicite pour les accès aux routes get et post utilisées pour le projet
-- App/Http/controller les controllers utilisés.
+- App/Http/controller les controllers utilisés (ProfilController.php  et AjaxController.php et des controller dans Auth pour l'autentification user)
 - ressources/views pour les fichiers blade de la vue
 - public (css/js/upload). un fichier welcom.css pour les média query vu sur mobile , tablette et ordinateur, le fichier welcome.blade.php public 
 -  sur ce fichier se trouve le développement js/ajax pour afficher les divs en fonction du deskop(smarphone ,tablette et ordinateur)
