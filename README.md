@@ -1,7 +1,7 @@
   Test dévéloppé pour société Hellocse
   installation et environnement de développement 
 - Projet à récupérer sur la branch devTest
-- cloner le projet avec git clone git@github.com:zapo1234/hellocse.git
+- cloner le projet avec git clone git@github.com:zapo1234/hellocse.git branch devtest
 
 - Serveur web utilisé wampserver port 80 , url localhost, base de données sur phpmyadmin (accès root , mot de passe vide) voir fichier .env
 - Utilisation du Back Lavarel 7 et Php 7.3
@@ -29,7 +29,8 @@
 - web voir les definitions des route get et post utilisés pour le projet
 - App/Http/controller les controllers utilisés.
 - ressources/views pour les fichiers blade de la vue
-- public (css/js/upload). un fichier welcom.css pour les média query vu sur mobile , tablette et ordinateur
+- public (css/js/upload). un fichier welcom.css pour les média query vu sur mobile , tablette et ordinateur, le fichier welcome.blade.php public 
+-  sur ce fichier se trouve le développement js/ajax pour afficher les divs en fonction du deskop(smarphone ,tablette et ordinateur)
 - Utilisation de l'outils de développement du navigateur chrome pour visualiser la partie css responsive sur le mobible et sur les autres dimensions d'ecran
 -  migrations pour les tables
 -  .env pour la base de données mysql
