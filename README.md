@@ -27,7 +27,7 @@
 - Une fois user connecté créer un ou plusieurs  profil pour les fiches  voir bouton en vert  , edit ou suprimer.
 
 - Différent dossiers
-- web voir les definitions des route get et post utilisés pour le projet
+- le fichier web.php explicite pour les accès aux routes get et post utilisées pour le projet
 - App/Http/controller les controllers utilisés.
 - ressources/views pour les fichiers blade de la vue
 - public (css/js/upload). un fichier welcom.css pour les média query vu sur mobile , tablette et ordinateur, le fichier welcome.blade.php public 
