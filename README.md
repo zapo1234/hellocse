@@ -2,7 +2,7 @@
   installation et environnement de développement 
 - Projet à récupérer sur la branch devTest
 - cloner le projet avec git clone git@github.com:zapo1234/hellocse.
--  Branche à recupére est la  branche devtest
+-  Branche à recupérer est la  branche devtest
 
 - Serveur web utilisé wampserver port 80 , url localhost, base de données sur phpmyadmin (accès root , mot de passe vide) voir fichier .env
 - Utilisation du Back Lavarel 7 et Php 7.3
